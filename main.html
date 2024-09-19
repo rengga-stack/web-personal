@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta name = "theme-color" content = "#000">
+  <title>Welcome!</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <!-- Tambahkan ini di dalam <head> atau sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><span class="logo-r">R</span>enzz</h1>
+      <a class="burger-r" href="#" onclick="MyFunction()" id="showAlert"><i class="fa fa-bars"></i></a>
+    </header>
+    <div class="isi">
+    <div class="gambar">
+      <div class="main-image">
+        <img class="profile" src="main-image_2.jpeg" alt="" />
+      </div> 
+    </div>
+    <div class="main">
+     <h1 class="name">Hello, It's <span class="s-name">Rengga.</span></h1>
+    </div>
+    <div class="im-a">
+      <h3 class="im-a-a">I'm a <span class="web-dev" id = "web-dev-write"></span></h3>
+    </div>
+    <div class="about-me">
+      <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit hic dolore, nemo, error architecto sit et exercitationem, magni repellat quam accusamus rem dolorem, quae quidem accusantium. Officiis ipsum laborum provident.</p>
+      <div class="sosmed">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="hire">
+        <a href="#">Hire me!</a>
+      </div>
+    </div>
+    </div>
+    <div class="isi-2">
+      <h1 class="what">
+        What can i do?
+      </h1>
+      <p class="cani">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eligendi consectetur doloribus quod a necessitatibus, dolore repellendus deserunt tempore. In autem consequuntur nihil ratione suscipit, distinctio accusamus ex voluptas porro!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptas, esse harum fugit ea rem fugiat, id, quo voluptatem atque omnis recusandae illo nam quos, facilis nobis veritatis dignissimos repellat.
+      </p>
+    </div>
+    <div class="services">
+      <h1 class="servi">
+        Services
+      </h1>
+      <div class="serv-1">
+        <i class="fa-solid fa-laptop"></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quia quos officia atque dolores sapiente itaque aut aliquid culpa eveniet eius, laboriosam nostrum, nemo mollitia quo dolore doloremque repudiandae assumenda!</p>
+        <a href="#">Go to the service</a>
+      </div>
+      <div class="serv-2">
+        <i class="fa-solid fa-code"></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quia quos officia atque dolores sapiente itaque aut aliquid culpa eveniet eius, laboriosam nostrum, nemo mollitia quo dolore doloremque repudiandae assumenda!</p>
+        <a href="#">Go to the service</a>
+      </div>
+    </div>
+    <div class="send">
+      <div class="send-o">
+        <h1 class="send-o-t">
+          SEND ME A SUGGESTION
+        </h1>
+        <p class="ini-m">
+          *ini masih belum berfungsi!
+        </p>
+      </div>
+      <div class="send-me">
+        <div class="form-1">
+        <input type="text" placeholder=" " id="name"/>
+          <label class="name" for="name">Name</label>
+        </div>
+        <div class="form-2">
+        <input type="email" placeholder=" " id="email"/>
+          <label class="name" for="email">Email</label>
+        </div>
+        <div class="form-3">
+        <input type="text" placeholder=" " id="message"/>
+          <label class="name" for="message">Message</label>
+        </div>
+        <div class="kirim">
+          <a href="#" class="kirim-sug"id="kirim">SEND!</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="foot">thanks for all</p>
+      <p class="copy">©copyright by renzz real fuck you</p>
+    </footer>
+  </div>
+  
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById('showAlert').addEventListener('click', function() {
+        Swal.fire({
+            title: 'Sek cah!',
+            text: 'HALAMAN-NYA BELUM DI BUAT YA KONTOL, KESEL!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    });
+    document.getElementById('kirim').addEventListener('click', function() {
+        Swal.fire({
+            title: 'FUCK_MUANI',
+            text: 'KAN UDAH SAYA BILANG BELUM BERFUNGSI MAS😹',
+            imageUrl: "image_geram.jpeg",
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: "Custom image"
+        });
+    });
+    
+    const texts = ["Web Developer", "Hacker", "Gamer", "Web Designer"];
+let textIndex = 0;
+let charIndex = 0;
+let isAdding = true;
+
+function type() {
+  const typewriter = document.getElementById("web-dev-write");
+  const currentText = texts[textIndex];
+
+  if (isAdding) {
+    if (charIndex < currentText.length) {
+      typewriter.innerHTML += currentText[charIndex];
+      charIndex++;
+    } else {
+      isAdding = false;
+      setTimeout(type, 1000); // Delay before deleting
+      return;
+    }
+  } else {
+    if (charIndex > 0) {
+      typewriter.innerHTML = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      isAdding = true;
+      textIndex = (textIndex + 1) % texts.length; // Go to the next text
+    }
+  }
+
+  setTimeout(type, isAdding ? 150 : 100); // Typing speed
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  type();
+});
+
+
+  </script>
+  
+</body>
+</html>
+      
